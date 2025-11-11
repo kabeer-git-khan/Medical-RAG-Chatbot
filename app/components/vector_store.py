@@ -41,6 +41,8 @@ def save_vector_store(text_chunks):
 
         logger.info("Saving vectorstoree")
 
+        # Ensure target directory exists before saving
+        os.makedirs(os.path.dirname(DB_FAISS_PATH), exist_ok=True)
         db.save_local(DB_FAISS_PATH)
 
         logger.info("Vectostore saved sucesfulyy...")
